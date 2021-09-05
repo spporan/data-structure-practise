@@ -24,6 +24,22 @@ def printBSTValueByorder(root):
         print(root.value)
         printBSTValueByorder(root.right)
 
+def search(root, key):
+    if root is None:
+        return 'Not Found '+ str(key)
+    else:
+        if root.value == key:
+            return 'Found value '+str(root.value)
+        elif root.value > key:
+            value = search(root.left,key)
+            return value
+        elif root.value < key:
+            value = search(root.right,key)
+            return value
+        else:
+            return "Not found "+ str(key)
+
+
 if __name__ == '__main__':
     #
     #         100
@@ -50,3 +66,11 @@ if __name__ == '__main__':
 
     printBSTValueByorder(r)
 
+    result = search(r,44)
+    print('result : '+ result)
+    result1 = search(r,33)
+    print('result : '+ result1)
+    result2 = search(r,440)
+    print('result : '+ result2)
+    result3 = search(r,435)
+    print('result : '+ result3)
