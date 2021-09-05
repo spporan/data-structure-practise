@@ -24,6 +24,8 @@ def printBSTValueByorder(root):
         print(root.value)
         printBSTValueByorder(root.right)
 
+# Search value using BST
+#This function for search value from the tree
 def search(root, key):
     if root is None:
         return 'Not Found '+ str(key)
