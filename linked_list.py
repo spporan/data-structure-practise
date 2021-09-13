@@ -1,4 +1,8 @@
 
+"""
+This is a linked list data structure. 
+"""
+
 class Node:
 
     #initialize function for init data
