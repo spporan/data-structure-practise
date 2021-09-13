@@ -1,3 +1,7 @@
+"""This is a BST algorithm which is implemented using python. 
+Big O notion is O(logn). It takes loggarithmic time to execute.
+"""
+
 #created node class for creating node
 class Node:
     def __init__(self, key):
