@@ -59,6 +59,35 @@ class LinkedList:
             current = current.next
             if current == None:
                 prev.next = new_node
+    
+    def insert(self, data, index = 0):
+        """
+        This is a insert function which actually insert values given a specific index.
+        If don't give any index position then it will add default position at 0.
+        It's a linear time operation. Worst case of this function will be O(n)
+        """
+        if index < 0 or index > self.size() - 1:
+            return IndexError("IndexOutOfBound Exception")
+
+        current = self.head
+        prev = None
+        count = 0
+        new_node = Node(data)
+        while current:
+            if count == index:
+                if prev == None:
+                    new_node.next = current
+                    self.head = new_node
+                else:
+                    new_node.next = prev.next
+                    prev.next = new_node
+                break
+            
+            prev = current
+            current = current.next
+            if current != None:
+                count += 1
+
 
     def search(self, key):
         """
