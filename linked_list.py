@@ -25,7 +25,7 @@ class LinkedList:
     def is_empty(self):
         return self.head == None
 
-    """get Size of the linked list"""
+    """get Size of the linked list. Size of linear time operation. That's mean Time complexity is O(n)"""
     def size(self):
         count = 0
         current_node = self.head
@@ -35,6 +35,15 @@ class LinkedList:
             current_node = current_node.next
 
         return count
+    
+    """
+    Adding value to the linked list using this method. That's actually a constant time operation.
+    adding data to the head of that linked list.
+    """
+    def add(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
 
 
     #print link data
@@ -43,6 +52,17 @@ class LinkedList:
         while(temp):
             print(temp.data)
             temp = temp.next
+
+    def __repr__(self):
+        """
+        This function is linear time operation. Time complexity of this function is O(n).
+        """
+        nodes = []
+        current_node = self.head
+        while current_node:
+            nodes.append(current_node.data)
+            current_node = current_node.next
+        return str(nodes)
 
 if __name__ == '__main__':
     linkedList = LinkedList()
