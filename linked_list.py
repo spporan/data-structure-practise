@@ -60,7 +60,20 @@ class LinkedList:
             if current == None:
                 prev.next = new_node
 
-
+    def search(self, key):
+        """
+        This is a search function. For searching a value into the linked list.
+        if found it will return True other False.
+        It is a linear time operation. It will take linear time. Time complexity of this function is O(n)
+        """
+        current = self.head
+        is_found = False
+        while current:
+            if current.data == key:
+                is_found = True
+                break
+            current = current.next
+        return is_found
     #print link data
     def printList(self):
         temp = self.head
