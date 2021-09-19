@@ -44,6 +44,21 @@ class LinkedList:
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
+    
+    def append(self, data):
+        """
+        Add data to this linked list at the end of the list.
+        First of all we find out tail of that list and linked to the new node.
+        It is linear time operation thats why it's time complexity O(n)
+        """
+        new_node = Node(data)
+        current = self.head
+        prev = None
+        while current:
+            prev = current
+            current = current.next
+            if current == None:
+                prev.next = new_node
 
 
     #print link data
