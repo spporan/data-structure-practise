@@ -105,6 +105,31 @@ class LinkedList:
             prev = current
             current = current.next
         return False
+
+    def remove_at(self, index):
+        """
+        This is a remove_at function which basically remove value at given a specific index.
+        It's a linear time operation. Worst case of this function will be O(n)
+        """
+        if index < 0 or index > self.size() - 1:
+            return IndexError("IndexOutOfBound Exception")
+
+        current = self.head
+        prev = None
+        count = 0
+        while current:
+            if count == index:
+                if prev == None:
+                    self.head = current.next
+                else:
+                    prev.next = current.next
+                return True
+            
+            prev = current
+            current = current.next
+            if current != None:
+                count += 1
+        return False
     
     def search(self, key):
         """
