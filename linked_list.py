@@ -88,7 +88,24 @@ class LinkedList:
             if current != None:
                 count += 1
 
-
+    def remove(self, key):
+        """
+        This is a remove function. which is basically remove item based on provided data
+        if found will be removed and return True, If not found those data it will be return False
+        """
+        current = self.head
+        prev = None
+        while current:
+            if current.data == key:
+                if prev == None:
+                    self.head = current.next
+                else:
+                    prev.next = current.next
+                return True
+            prev = current
+            current = current.next
+        return False
+    
     def search(self, key):
         """
         This is a search function. For searching a value into the linked list.
