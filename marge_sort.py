@@ -8,6 +8,7 @@ def merge_sort(list):
     Conquer: Recursivelly sorts the sublist created as i mentioned before.
     Combine: marge the sorted sublists that created previous steps.
 
+    Overall sorting take time O(nlogn)
     """
     if len(list) <= 1 :
         return []
@@ -21,7 +22,7 @@ def merge_sort(list):
 def split(list):
     """
     Divide a list into two sublist at midpoint and retrun two sublists
-
+    Takes overall O(logn) time
     """
     midpoint = len(list) // 2
     left = list[:midpoint]
@@ -34,6 +35,7 @@ def merge(left, right):
     """
     Merge two sublist into a list and sorting them in the proccess and 
     returns a new sorted list
+    Runs in overall o(n) times.
     """
 
     i = 0
